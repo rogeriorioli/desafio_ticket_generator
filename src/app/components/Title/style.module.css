@@ -1,0 +1,11 @@
+.title {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 52px */
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #dee0fc 0%, #996dff 51.04%, #bc9fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

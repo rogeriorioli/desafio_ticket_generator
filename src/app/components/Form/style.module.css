@@ -1,0 +1,11 @@
+.inputContainer {
+  display: flex;
+  padding: 16px 12px;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.input:focus-visible {
+  outline: none;
+}

@@ -1,0 +1,14 @@
+.ticketWrapper {
+  background-image: url("/assets/bg-card-ticket.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 408px;
+}
+.eventLogo {
+  background-image: url("/assets/img-cover.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 318px;
+}
