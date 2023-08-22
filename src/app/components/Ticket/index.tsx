@@ -10,7 +10,7 @@ const Ticket = () => {
   return (
     <div className={`w-full h-full p-11 ${style.ticketWrapper}`}>
       <div className="card flex flex-row">
-        <div className={`w-3/5 ${style.eventLogo}`}>ssdad</div>
+        <div className={`w-3/5 ${style.eventLogo}`}></div>
         <div className={`w-2/5 bg-gray-light p-4`}>
           <div className="flex flex-col">
             <div className="flex justify-center w-full">
