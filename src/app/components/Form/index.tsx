@@ -1,16 +1,45 @@
 "use client";
-import React, { FormEvent, useRef, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import style from "./style.module.css";
 import { roboto, space } from "../../fonts";
 import axios from "axios";
 import { useUserContext } from "@/app/context/useContext";
+import html2canvas from "html2canvas";
+
 const Form = () => {
   const { updateUser } = useUserContext();
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [message, setMessage] = useState("");
   const [statusClass, setStatusClass] = useState("");
   const [status, setStatus] = useState(false);
+  const createImageFromDiv = async (e: any) => {
+    e.preventDefault();
+    const card: HTMLElement | null = document.querySelector(
+      ".style_ticketWrapper__oK_rX"
+    );
 
+    console.log(card);
+
+    if (card) {
+      try {
+        const canvas = await html2canvas(card);
+        const image = canvas.toDataURL("image/png");
+
+        // Create an <img> element and set its src to the data URL
+        const imgElement = document.createElement("img");
+        imgElement.src = image;
+
+        // Append the image element to the document body or any other container
+        document.body.appendChild(imgElement);
+        canvas.toBlob((blob) =>
+          //@ts-ignore
+          window.open(URL.createObjectURL(blob), "_blank")
+        );
+      } catch (error) {
+        console.error("Error creating image:", error);
+      }
+    }
+  };
   const handleInputValue = async (e: FormEvent) => {
     e.preventDefault();
     if (inputRef.current) {
@@ -92,7 +121,7 @@ const Form = () => {
         {status ? (
           <button
             className="bg-purple-normal hover:bg-purple-dark text-gray-light uppercase w-full py-3 mt-4"
-            onClick={() => {}}
+            onClick={createImageFromDiv}
           >
             <span className={roboto.className}>FAZER DOWload</span>
           </button>
