@@ -18,19 +18,10 @@ const Form = () => {
       ".style_ticketWrapper__oK_rX"
     );
 
-    console.log(card);
-
     if (card) {
       try {
         const canvas = await html2canvas(card);
         const image = canvas.toDataURL("image/png");
-
-        // Create an <img> element and set its src to the data URL
-        const imgElement = document.createElement("img");
-        imgElement.src = image;
-
-        // Append the image element to the document body or any other container
-        document.body.appendChild(imgElement);
         canvas.toBlob((blob) =>
           //@ts-ignore
           window.open(URL.createObjectURL(blob), "_blank")
