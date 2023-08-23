@@ -8,12 +8,12 @@ import { useUserContext } from "@/app/context/useContext";
 const Ticket = () => {
   const { user } = useUserContext();
   return (
-    <div className={`w-full h-full p-11 ${style.ticketWrapper}`}>
-      <div className="card flex flex-row">
-        <div className={`w-3/5 ${style.eventLogo}`}></div>
-        <div className={`w-2/5 bg-gray-light p-4`}>
+    <div className={`lg:w-full h-full lg:p-11 p-2 ${style.ticketWrapper}`}>
+      <div className="card flex lg:flex-row flex-col">
+        <div className={`lg:w-3/5 ${style.eventLogo}`}></div>
+        <div className={`lg:w-2/5 bg-gray-light p-4`}>
           <div className="flex flex-col">
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center lg:w-full">
               <Image
                 src={user.avatar_url}
                 className="rounded-full mb-1"

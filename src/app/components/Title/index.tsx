@@ -8,7 +8,7 @@ type TitleProps = {
 
 const Title = () => {
   return (
-    <h1 className={`${styles.title} ${space.className} mb-8`}>
+    <h1 className={`${styles.title} ${space.className} mb-8  sm:text-sm`}>
       GERE SEU TICKET <br /> E COMPARTILHE <br /> COM O MUNDO
     </h1>
   );
