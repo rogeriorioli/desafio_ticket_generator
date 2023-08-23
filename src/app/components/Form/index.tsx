@@ -41,7 +41,6 @@ const Form = () => {
             name: data.name,
             avatar_url: data.avatar_url,
           });
-
           setStatus(true);
           setStatusClass(`text-gray-light uppercase ${space.className}`);
           setMessage("ticket criado com sucesso");
