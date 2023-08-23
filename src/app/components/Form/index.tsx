@@ -21,7 +21,6 @@ const Form = () => {
     if (card) {
       try {
         const canvas = await html2canvas(card);
-        const image = canvas.toDataURL("image/png");
         canvas.toBlob((blob) =>
           //@ts-ignore
           window.open(URL.createObjectURL(blob), "_blank")
@@ -42,9 +41,7 @@ const Form = () => {
             name: data.name,
             avatar_url: data.avatar_url,
           });
-          if (inputRef.current) {
-            inputRef.current.value = "";
-          }
+
           setStatus(true);
           setStatusClass(`text-gray-light uppercase ${space.className}`);
           setMessage("ticket criado com sucesso");
@@ -53,6 +50,9 @@ const Form = () => {
           setStatus(false);
           setStatusClass(`text-danger ${roboto.className}`);
           setMessage("Usuário inválido. Verifique e tente novamente.");
+          if (inputRef.current) {
+            inputRef.current.value = "";
+          }
         });
     }
   };
